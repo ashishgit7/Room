@@ -4,6 +4,38 @@
             Services
         </h4>
           <hr>
+
+        <div id="flex-card" class="scrolling-wrapper-flexbox">
+          <div class="cards">
+            <div class="card" style="width: 18rem; margin-left: 15px;"  data-aos="fade-up">
+                  <img class="card-img-top" src="src/assets/house-owner.png" alt="Card image cap" style="width: 286px;height: 208px;">
+                  <div class="card-body">
+                    <hr>
+                    <p style="font-weight: 600; font-size: 16px;font-family: Bahnschrift">We provide instant accommodation</p>
+                  </div>
+                </div>
+            </div>
+          <div class="cards">
+            <div class="card" style="width: 18rem; margin-left: 15px;" data-aos="fade-down">
+                  <img class="card-img-top" src="src/assets/served-client.png" alt="Card image cap" style="width: 286px;height: 208px;">
+                  <div class="card-body">
+                    <hr>
+                    <p style="font-weight: 600; font-size: 16px;font-family: Bahnschrift">We accept bulk booking of beds anytime</p>
+                  </div>
+                </div>
+          </div>
+          <div class="cards">
+            <div class="card" style="width: 18rem;margin-left: 15px;" data-aos="fade-up">
+                  <img class="card-img-top" src="src/assets/support.png" alt="Card image cap" style="width: 286px;height: 208px;">
+                  <div class="card-body">
+                    <hr>
+                    <p style="font-weight: 600; font-size: 16px;font-family: Bahnschrift">We provide 24x7 client-owner support forum</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+       
         <div id="card-view">
           <ul>
             <li>
@@ -42,10 +74,10 @@
                 <p class="h4 pb-0 mb-0" style="font-family: Bahnschrift;">
                   Are you a
                 </p>
-                <p class="display-3">
+                <p class="display-3" style="font-size:45px;">
                   Homeowner?
                 </p>
-                <button class="btn btn-light mt-0" type="button" data-toggle="modal" data-target="#exampleModalCenter">
+                <button class="btn btn-light mt-0" type="button">
                   Enlist your property
                 </button>
               </div>
@@ -79,6 +111,9 @@ export default {
     return {
       
     }
+  },
+  methods:{
+
   }
 }
 </script>

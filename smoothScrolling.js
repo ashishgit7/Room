@@ -26,7 +26,19 @@ function doScrolling(element, duration) {
 				  })
 }
 
+
+
+
+//to change bg image
 if(window.innerWidth<=480)
   {
      document.getElementById('back-img').src="src/assets/background.png";
    }
+
+//to set horizontal scrolling of crards
+ var cards = "";
+ if(window.innerWidth<=480)
+    {
+     document.getElementById('row').classList+=" scrolling-wrapper-flexbox"
+      cards="cards"
+    }

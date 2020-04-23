@@ -1,9 +1,10 @@
 <template>
   <div>
     <navbar></navbar>
-    <content-page></content-page>
+    <contentpage></contentpage>
     <Filterr></Filterr>
     <service></service>
+    <ownentry></ownentry>
     <property></property>
     <footeR></footeR>
   </div>
@@ -13,8 +14,10 @@
 export default {
   data () {
     return {
-      title:"my vue file"
+      
     }
+  },
+  methods:{
   }
 }
 </script>

@@ -59,45 +59,67 @@
     <script src="smoothScrolling.js"></script>
 
 
-    <style type="text/css" media="screen">
+<style type="text/css" media="screen">
 
+ .scrolling-wrapper-flexbox {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+  }
 
-  @media (max-width: 480px) {
-    body{
-      margin: 0;
-      padding: 0;
+  .cards {
+        flex: 0 0 auto;
+   }
+
+  #flex-card{
+      display: none;
     }
-    #heading {
-      display: none; }
 
-    #back-img {
-      width: 100vw !important;
-      padding: 20px !important; }
+ @media (max-width: 480px) {
+  #heading {
+    display: none; }
 
-    /*.container {
-      margin: 0 auto !important; }
-*/
-    #wrapper {
-      margin-top: 10px !important; }
+  #back-img {
+    width: 100vw !important;
+    padding: 20px !important; }
 
-    #search-div {
-      margin-top: 30px !important;
-      position: inherit !important;
-      margin-bottom: 50px !important; }
+  .container {
+    margin: 0 auto !important; }
 
-    #card-view ul li {
-      margin-right: 0px; }
+  #wrapper {
+    margin-top: 10px !important; }
 
-    #owner-card {
-      display: block;
-      margin-bottom: 60px; }
+  #search-div {
+    margin-top: 30px !important;
+    position: inherit !important;
+    margin-bottom: 50px !important; }
 
-    .display-3{
-      font-size: 35px;
-    }  
+  #card-view ul li {
+    margin-right: 0px; }
 
-    #footer {
-      margin-bottom: 10px !important; } 
+  #owner-card {
+    display: block;
+    margin-bottom: 60px; }
+
+  #footer {
+    margin-bottom: 10px !important; } 
+
+    .card-img-top{
+
+      width: 100%;
+      height: 130px;
+    }
+    .small-desc{
+      display: none;
+    }
+
+    #flex-card{
+      display: flex;
+    }
+    #card-view{
+      display: none;
+    }
+  
 
   }
       
