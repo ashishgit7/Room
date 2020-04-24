@@ -28,18 +28,20 @@ export default {
     }
   },
   mounted(){
-db.collection('properties').get().then((res) =>{
-        console.log(res.docs[0].data().name);
+
+    db.collection('properties').get().then((res) =>{
+        // console.log(res.docs[0].data().name);
         res.docs.forEach( function(element, index) {
             var anime;
             if(index%2==0) 
-                anime = "fade-down"; 
-            else 
                 anime = "fade-up"; 
+            else 
+                anime = "fade-down"; 
+            
 
             var newEle = `
 
-            <div class="col-lg-3 col-md-6 col-12 p-3 ${cards}" style="margin-bottom: 30px;">
+            <div class="col-lg-3 col-md-6 col-12 p-3" style="margin-bottom: 30px;">
               <div class="card" data-aos=${anime}>
                 <img class="card-img-top" src="src/assets/bg-1.jpeg" alt="Card image cap">
                 <div class="card-body">

@@ -8,21 +8,35 @@ import Service from './services.vue'
 import Property from './properties.vue'
 import Footer from './footer.vue'
 import ownerEntry from './ownerEntry.vue'
-
-
+import VueRouter from 'vue-router'
+import Routes from './routes'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'jquery/src/jquery.js'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+// import VueFire from 'vuefire'
+// Vue.use(VueFire)
+
+Vue.use(VueRouter);
+
+const router= new VueRouter({
+    routes:Routes,
+    mode: 'history'
+  
+});
+
+
+
 Vue.use(BootstrapVue)
 
 Vue.component('navbar',navBar);
-Vue.component('contentpage',Content);
+Vue.component('content-page',Content);
 Vue.component('Filterr',Filter);
 Vue.component('service',Service);
 Vue.component('property',Property);
 Vue.component('footeR',Footer);
-Vue.component('ownentry',ownerEntry);
+Vue.component('ownerEntry',ownerEntry);
 new Vue({
   el: '#app',
-  render: h => h(App)
-
+  render: h => h(App),
+  router:router
 })

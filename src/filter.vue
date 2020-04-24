@@ -6,7 +6,7 @@
             <div class="form-row">
                 <div class="col-md-3">
                     <label for="validationCustom01" style="font-family: Bahnschrift;margin-bottom:10px;">Property Type:</label>
-                    <select class="form-control" id="exampleFormControlSelect1" style="font-family: Bahnschrift;color: rgba(0,191,255,0.8);">
+                    <select class="form-control" id="exampleFormControlSelect1" style="font-family: Bahnschrift;color: rgba(0,191,255,0.8);" v-model="typeinput">
                         <option>Private Rooms</option>
                         <option>Shared Rooms</option>
                         <option>Whole House</option>
@@ -14,8 +14,8 @@
                 </div>
                 <div class="col ">
                     <label for="validationCustom02" style="font-family: Bahnschrift;margin-bottom:10px;">Location:</label>
-                    <input type="text" class="form-control" id="validationCustom02" placeholder="Location"  list="places" style="font-family: Bahnschrift;color: rgba(0,191,255,0.8);">
-                    <datalist  id="places" style="font-family: Bahnschrift;color: rgba(0,191,255,0.8);">
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Location"  list="places" style="font-family: Bahnschrift;color: rgba(0,191,255,0.8);" autocomplete=off v-model="candidatelocation">
+                    <datalist  id="places" style="font-family: Bahnschrift;color: rgba(0,191,255,0.8);" >
                        <!-- from db -->
                        <option v-for="place in places">{{place}}</option>
                     </datalist>
@@ -23,7 +23,7 @@
                 
                 <div class="col-md-3">
                     <label for="validationCustom01" style="font-family: Bahnschrift;margin-bottom:10px;">For Whom:</label>
-                    <select class="form-control" id="exampleFormControlSelect2" style="font-family: Bahnschrift;color: rgba(0,191,255,0.8);">
+                    <select class="form-control" id="exampleFormControlSelect2" style="font-family: Bahnschrift;color: rgba(0,191,255,0.8);" v-model="forwhomselected" autocomplete="off">
                         <option>Boys</option>
                         <option>Girls</option>
                         <option>Family</option>
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="col-md-1 d-flex align-content-end">
-                    <button class="btn btn-block btn-secondary mt-md-auto mt-4">Search</button>
+                    <button class="btn btn-block btn-secondary mt-md-auto mt-4 mybtn" :disabled="this.candidatelocation.length==0||this.forwhomselected.length==0||this.typeinput.length==0" @click="goto" >Search</button>
                 </div>
             </div>
         </div>
@@ -43,14 +43,38 @@
 import db from '../firebase'
 
 export default {
+    props:['queryObject'],
   data () {
     return {
-      location:'',	
-      places: []
+      location:'',
+      typeinput:'',	
+      forwhomselected:'',	
+      candidatelocation:'',	
+      places: [
+          'durga kund',
+          'mall',
+          'lanka',
+      ]
     }
   },
    methods: {
-       
+       checkinp:function(){
+        //    console.log(this.candidatelocation);
+          if(this.candidatelocation.length==0){
+              
+          return true ;}
+          else{
+          return false;}
+       },
+       goto:function(){
+           let queryObject = {
+                type: this.typeinput,
+                location: this.candidatelocation,
+                ForWhom: this.forwhomselected,
+            }
+        //   console.log(queryObject);  
+          this.$router.push({name:'result',params:{queryObject}});
+       }
     },
      mounted(){
         db.collection('locations').doc('list').get().then(
@@ -66,6 +90,25 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.mybtn {
+  border: 1px solid #0066cc!important;
+  background-color: #0099cc!important;
+  color: #ffffff!important;
 
+}
+
+.mybtn:hover {
+  border: 1px solid #0099cc!important;
+  background-color: #00aacc!important;
+  color: #ffffff!important;
+
+}
+
+.mybtn:disabled,
+button[disabled]{
+  border: 1px solid #999999!important;
+  background-color: #cccccc!important;
+  color: #666666!important;
+}
 </style>

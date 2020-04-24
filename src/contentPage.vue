@@ -15,7 +15,7 @@
               <h4 id="h4-2" style="font-family: Bahnschrift;">And Shift To Your</h4>
               <h1 id="h1-1" style="font-family: Bahnschrift; font-size: 55px; color: rgb(0,191,255); font-weight:600;">Perfect Home</h1>
               <p id="p-1" style="font-family: Bahnschrift; font-size: 18px;color: dimgrey; font-weight: 300;">A perfect solution for the home seeker where we provide <br> room on rent at lowest possible cost. </p>
-              <button id="btn-explore" type="button" style="font-family: Bahnschrift;background-color: rgba(0,191,255,0.8);color:white; outline: 0;border:0; width: 100px;height: 40px;" class="rounded-pill" onclick="doScrolling('#properties', 2000)">Explore</button> 
+              <button id="btn-explore" type="button" style="font-family: Bahnschrift;background-color: rgba(0,191,255,0.8);color:white; outline: 0;border:0; width: 100px;height: 40px;" class="rounded-pill" v-on:click="">Explore</button> 
           </div>
     </div>
 </template>
@@ -24,7 +24,7 @@
 export default {
   data () {
     return {
-    
+      title:"my vue file"
     }
   },
    methods: {
