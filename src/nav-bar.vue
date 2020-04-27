@@ -16,7 +16,7 @@
                        <button id="search-btn" style="background-color: transparent;border:0;outline: 0;"> <a class="nav-link" href="/search.html" style="font-family: Bahnschrift;">Search</a></button>
                       </li>
                       <li class="nav-item">
-                        <button id="detail-btn" style="background-color: transparent;border:0;outline: 0;"><a class="nav-link" href="/detail.html" style="font-family: Bahnschrift;">Detail</a></button>
+                        <button id="detail-btn" style="background-color: transparent;border:0;outline: 0;"><router-link class="nav-link" to="/portal" style="font-family: Bahnschrift;">Portal</router-link></button>
                       </li>
                     </ul>
                   </div>

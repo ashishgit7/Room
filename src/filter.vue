@@ -73,7 +73,7 @@ export default {
                 ForWhom: this.forwhomselected,
             }
         //   console.log(queryObject);  
-          this.$router.push({name:'result',params:{queryObject}});
+          this.$router.push({name:'result',query:{queryObject}});
        }
     },
      mounted(){
